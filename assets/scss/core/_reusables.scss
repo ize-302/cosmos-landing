@@ -1,0 +1,9 @@
+.container {
+  max-width: 1161px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 26px 24px;
+  @include for-xl-up {
+    padding: 26px 0px;
+  }
+}

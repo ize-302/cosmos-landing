@@ -1,0 +1,127 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  ul.menu {
+    display: none;
+
+    li {
+      margin-right: 32px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include for-sm-up {
+      display: flex;
+    }
+
+    &__mobile {
+      background: white;
+      position: fixed;
+      width: 100%;
+      top: 0px;
+      left: 0;
+      padding: 50px 15px 20px 15px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      li {
+        margin-bottom: 80px;
+        a {
+          color: #000;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      @include for-sm-up {
+        display: none;
+      }
+    }
+  }
+
+  .hamburger {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      background: white;
+      padding: 1px;
+      width: 22px;
+      height: 1px;
+      transition: all 250ms ease-out;
+      will-change: transform;
+
+      &:nth-child(1) {
+        transform: translateY(-3px);
+      }
+      &:nth-child(2) {
+        transform: translateY(3px);
+      }
+    }
+
+    &.active {
+      position: relative;
+      z-index: 2;
+      span {
+        background: black;
+      }
+      span {
+        &:nth-child(1) {
+          transform: translateY(2px) rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }
+    }
+
+    @include for-sm-up {
+      display: none;
+    }
+  }
+
+  .call-to-action {
+    background: #ffffffd1;
+    border: 0;
+    color: #000000;
+    border-radius: 6px;
+    padding: 12px 24px;
+    display: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #fff;
+    }
+
+    @include for-sm-up {
+      display: block;
+    }
+  }
+}

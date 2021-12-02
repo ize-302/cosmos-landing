@@ -1,0 +1,14 @@
+// Core & Helpers
+@import "core/reset";
+@import "core/mixins";
+@import "core/reusables";
+
+// Components
+@import "components/navbar";
+@import "components/hero";
+
+body {
+  background-color: black;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
